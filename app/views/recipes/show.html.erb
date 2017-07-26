@@ -1,0 +1,12 @@
+<div>
+	
+	<h1><%= link_to @recipe.name, @recipe%></h1><br>
+	<p>Description: <%= @recipe.description.nil? ? "No Description Available!" : @recipe.description%></p><br>
+
+	<br>
+	<%@ingredients.each do |ingredient|%>
+		<%= ingredient.name %><br>
+	<% end %>
+	<br>
+	
+</div>

@@ -1,0 +1,12 @@
+<h1> All Ingredients </h1><br>
+
+<% @ingredients.each do |ingredient| %>
+	<div>
+		
+		<h3><%= link_to @ingredient.name, @ingredient%></h3>
+		<p>Description: <%= @ingredient.description.nil? ? "No Description Available!" : @ingredient.description%></p><br>
+		<p>Stock: <%= @ingredient.stock%></p>
+		<br>
+
+	</div>
+<% end %>

@@ -1,0 +1,15 @@
+<h1>New Recipe</h1>
+<%= form_for @recipe do |f|%>
+	<%= label_tag "Recipe Name: " %>
+	<%= f.text_field :name%><br>
+	<%= label_tag "Recipe Description: " %>
+	<%= f.text_area :description%><br>
+
+	<%= collection_check_boxes(:recipe, :ingredient_ids, @ingredients, :id, :name) do |b| %>
+   		<% b.label(:"data-value" => b.value, id: b.text) { b.check_box(id: b.text) + b.text  } %>
+	<% end%>
+
+	<br>
+
+	<%= f.submit "Create Recipe"%>
+<% end %>

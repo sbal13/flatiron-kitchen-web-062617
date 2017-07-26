@@ -1,0 +1,16 @@
+<div>
+	
+	<h1><%= link_to @ingredient.name, @ingredient%></h1><br>
+	<p>Description: <%= @ingredient.description.nil? ? "No Description Available!" : @ingredient.description%></p><br>
+	<p>Stock: <%= @ingredient.stock%></p>
+
+	<br>
+
+	<%= form_for @ingredient, url: restock_path do |f|%>
+		<%= f.number_field :stock%>
+		<%= f.submit "Restock" %>
+	<% end %>
+
+	<br>
+	
+</div>
